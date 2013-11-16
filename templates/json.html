@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-language" content="en"/>
+    <script type="text/javascript">
+        var obj = {{ results }}
+        if (typeof obj == 'string') {
+            obj = eval("(" + obj + ')');
+        }
+        var str = JSON.stringify(obj, undefined, 2); // indentation level = 2
+        str = str.replace(/ /g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+        str = str.replace(/\n/g, '<br />');
+        document.write(str);
+    </script>
+</head>
+<body>
+</body>
+</html>
